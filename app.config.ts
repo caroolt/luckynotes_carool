@@ -1,7 +1,7 @@
 export default defineAppConfig({
   name: "Carool's notes",
   description: "Build & learn in public notes",
-  host: "notes.igorhalfeld.com",
+  host: "notes.carolina-teixeira.com.br",
 
   author: {
     twitter: "caroltcoelho",
