@@ -72,6 +72,12 @@ defineOgImageComponent("Main", {
   description: header.description || "Missing description",
   host: host || "Missing host",
 });
+
+onMounted(() => {
+  if(!route.params.slug) {
+    router.push("/");
+  }
+})
 </script>
 
 <template>
