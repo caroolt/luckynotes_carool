@@ -1,10 +1,10 @@
 export default defineAppConfig({
-  name: "Igor's lucky notes",
+  name: "Carool's notes",
   description: "Build & learn in public notes",
   host: "notes.igorhalfeld.com",
 
   author: {
-    twitter: "igorhalfeld",
+    twitter: "caroltcoelho",
   },
 
   publishing: {
@@ -12,9 +12,9 @@ export default defineAppConfig({
   },
 
   header: {
-    title: "Hi there 👋",
+    title: "Hi there 😊",
     description:
-      "Welcome to my notes! here I share my thoughts, ideas, and learnings.",
+      "Welcome to my not so secret diary! Here I share my thoughts, ideas and learnings.",
   },
 
   ui: {
