@@ -61,10 +61,10 @@ const handleNoteUpdate = async () => {
 };
 
 useSeoMeta({
-  titleTemplate: "%s | Luckynotes",
+  titleTemplate: "%s | Not so Secret Diary",
   title: () => name || "Missing name",
   description: () => header.description || "Missing description",
-  ogTitle: () => `${name} | Luckynotes`,
+  ogTitle: () => `${name} | Not so Secret Diary`,
 });
 
 defineOgImageComponent("Main", {

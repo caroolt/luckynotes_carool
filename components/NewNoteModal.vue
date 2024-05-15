@@ -7,6 +7,7 @@ const name = ref<string>("");
 
 const props = defineProps<{
   loading: boolean;
+  errorMessage: String;
 }>();
 
 const emit = defineEmits<{
@@ -23,7 +24,7 @@ const emit = defineEmits<{
       <UFormGroup label="Name your note" name="name">
         <UInput v-model="name" type="text" />
       </UFormGroup>
-
+      <p class="md:text-sm text-red-500"> {{ errorMessage }} </p>
       <div>
         <UButton type="submit">
           {{ props.loading ? "Loading" : "Create" }}

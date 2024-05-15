@@ -4,7 +4,7 @@ const { loggedIn, fetch: refreshSession, clear } = useUserSession();
 
 const authModalIsOpen = ref(false);
 const createNoteModalIsOpen = ref(false);
-
+const errorMessage = ref('');
 const router = useRouter();
 const { loading, password, login } = useLogin();
 const { loading: creating, title, slug, create } = useNoteCreate();
@@ -27,6 +27,13 @@ const handleLogin = async (pass: string) => {
 };
 
 const handleNewNote = async (name: string) => {
+  errorMessage.value = ''
+  const containsOnlySpaces = /^\s+$/.test(name);
+  if (!name.trim() || containsOnlySpaces) {
+    errorMessage.value = "The name cannot be empty or consist only of spaces."
+    return;
+  }
+
   title.value = name;
   await create();
   createNoteModalIsOpen.value = false;
@@ -38,6 +45,10 @@ useSeoMeta({
   ogType: "website",
   twitterCard: "summary_large_image",
   twitterSite: author.twitter,
+});
+
+onUnmounted(() => {
+  errorMessage.value = ''
 });
 </script>
 
@@ -60,6 +71,7 @@ useSeoMeta({
     <NewNoteModal
       v-model="createNoteModalIsOpen"
       :loading="creating"
+      :errorMessage="errorMessage"
       @new="handleNewNote"
     >
     </NewNoteModal>
