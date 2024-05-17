@@ -8,10 +8,10 @@ const { data: notes, refresh } = await useFetch<NoteVirtual[]>("/api/notes/");
 watch(loggedIn, () => refresh());
 
 useSeoMeta({
-  titleTemplate: "%s | Luckynotes",
+  titleTemplate: "%s | Build in Public",
   title: () => name || "Missing name",
   description: () => header.description || "Missing description",
-  ogTitle: () => `${name} | Luckynotes`,
+  ogTitle: () => `${name} | Build in Public`,
 });
 
 defineOgImageComponent("Main", {
