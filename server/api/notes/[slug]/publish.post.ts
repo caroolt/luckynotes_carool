@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-
+import { useLinkedin } from "~/server/utils/useLinkedin"
 type TweetOptions = {
   title: string;
   url: string;
@@ -45,6 +45,11 @@ export default eventHandler(async (event) => {
     });
 
     await tweetText(text);
+  }
+
+  if (publishing.linkedin) {
+    const url = `https://${host}/note/${slug}`;
+    useLinkedin(url, note.title);
   }
 
   return { slug };

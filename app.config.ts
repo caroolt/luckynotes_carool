@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  name: "Carool's notes",
+  name: "Bits of Knowledge",
   description: "Build & learn in public notes",
   host: "notes.carolina-teixeira.com.br",
 
@@ -9,6 +9,7 @@ export default defineAppConfig({
 
   publishing: {
     twitter: true,
+    linkedin: true,
   },
 
   header: {
@@ -18,6 +19,6 @@ export default defineAppConfig({
   },
 
   ui: {
-    primary: "cyan",
+    primary: "purple",
   },
 });

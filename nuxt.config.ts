@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     twitterAccessToken: process.env.TWITTER_ACCESS_TOKEN,
     twitterAccessSecret: process.env.TWITTER_ACCESS_SECRET,
 
+    linkedinAPIAccessToken: process.env.LINKEDIN_API_ACCESS_TOKEN,
+    LinkedinAPIURN: process.env.LINKEDIN_API_URN,
+
     adminPassword: process.env.ADMIN_PASSWORD,
     databaseDir: resolve("./server/database"),
     tursoDBURL: process.env.TURSO_DB_URL,
