@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export function useLinkedin(url: string, title: string) {
+export function useLinkedin(url: string, title: string, desc: string) {
   const {
     linkedinAPIAccessToken,
     LinkedinAPIURN,
@@ -13,7 +13,7 @@ export function useLinkedin(url: string, title: string) {
         "specificContent": {
             "com.linkedin.ugc.ShareContent": {
                 "shareCommentary": {
-                    "text": `Acabei de lançar um novo artigo no mais recente Bits de Conhecimento: ${title}
+                    "text": `${desc}
 
                     Check it out: ${url}
                     

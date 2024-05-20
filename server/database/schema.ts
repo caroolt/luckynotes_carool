@@ -5,6 +5,7 @@ export const notes = sqliteTable("notes", {
   slug: text("slug").primaryKey(),
   title: text("title").notNull(),
   content: text("content").notNull(),
+  desc: text("desc").notNull(),
   isDraft: integer("is_draft", { mode: "boolean" }).default(true),
   createdAt: integer("created_at", { mode: "timestamp" })
     .notNull()

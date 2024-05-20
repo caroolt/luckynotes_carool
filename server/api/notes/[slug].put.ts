@@ -21,6 +21,7 @@ export default eventHandler(async (event) => {
     .set({
       title: payload.title,
       content: payload.content,
+      desc: payload.desc,
       isDraft: payload.isDraft,
     })
     .where(eq(tables.notes.slug, slug));

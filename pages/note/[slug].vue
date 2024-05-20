@@ -24,6 +24,19 @@ const { loading, update } = useNoteUpdate({
 
 const editor = ref<HTMLElement>();
 const isEditing = ref(false);
+const socialMediaModal = ref(false);
+
+const handleSocialMediaModal = () => {
+  socialMediaModal.value = !socialMediaModal.value;
+};
+
+const handleCreateDescription = (e: string) => {
+  if(note && note.value) {
+    note.value.desc = e;
+  }
+  
+  handleSocialMediaModal();
+}
 
 const handlePublish = async () => {
   await publish();
@@ -61,10 +74,10 @@ const handleNoteUpdate = async () => {
 };
 
 useSeoMeta({
-  titleTemplate: "%s | Not so Secret Diary",
+  titleTemplate: "%s | Build in Public",
   title: () => name || "Missing name",
   description: () => header.description || "Missing description",
-  ogTitle: () => `${name} | Not so Secret Diary`,
+  ogTitle: () => `${name} | Build in Public`,
 });
 
 defineOgImageComponent("Main", {
@@ -87,6 +100,8 @@ defineOgImageComponent("Main", {
           {{ publishing ? "Publishing" : "Publish" }}
         </UButton>
       </div>
+
+      <UButton v-else color="gray" @click="handleSocialMediaModal">Create Description</UButton>
     </template>
   </NoteTitle>
 
@@ -123,4 +138,12 @@ defineOgImageComponent("Main", {
       </UButton>
     </div>
   </form>
+
+  <SocialMediaModal
+      v-if="note"
+      v-model="socialMediaModal"
+      :desc="note.desc"
+      @input="handleCreateDescription"
+    >
+  </SocialMediaModal>
 </template>

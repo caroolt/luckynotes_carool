@@ -31,6 +31,7 @@ export default eventHandler(async (event) => {
     content: note.content,
     isDraft: note.isDraft ?? false,
     createdAt: note.createdAt.toISOString(),
+    desc: note.desc,
     parsed: await parseMarkdown(note.content),
   };
 

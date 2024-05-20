@@ -15,6 +15,7 @@ export function useNoteCreate() {
         body: {
           title: title.value,
           content: "# Hello world!",
+          desc: ""
         },
       });
 

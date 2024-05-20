@@ -49,7 +49,7 @@ export default eventHandler(async (event) => {
 
   if (publishing.linkedin) {
     const url = `https://${host}/note/${slug}`;
-    useLinkedin(url, note.title);
+    useLinkedin(url, note.title, note.desc);
   }
 
   return { slug };

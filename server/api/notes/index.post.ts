@@ -17,6 +17,7 @@ export default eventHandler(async (event) => {
     slug,
     title: payload.title,
     content: payload.content,
+    desc: payload.desc,
     createdAt: new Date(),
   });
 
