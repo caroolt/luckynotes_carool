@@ -8,7 +8,7 @@ export default defineAppConfig({
   },
 
   publishing: {
-    twitter: true,
+    twitter: false,
     linkedin: true,
   },
 
